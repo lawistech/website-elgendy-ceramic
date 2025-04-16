@@ -112,60 +112,78 @@
         width: 100%;
         z-index: 1000;
         transition: var(--transition);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
       .header-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 0;
+        padding: 8px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .language-toggle {
         color: var(--light-color);
+        font-size: 14px;
       }
 
       .language-toggle a {
         opacity: 0.7;
         transition: var(--transition);
+        padding: 3px 8px;
+        border-radius: 3px;
       }
 
       .language-toggle a:hover {
         opacity: 1;
         color: var(--secondary-color);
+        background-color: rgba(255, 255, 255, 0.05);
       }
 
       .social-icons {
         display: flex;
-        gap: 15px;
+        gap: 12px;
       }
 
       .social-icons a {
         color: var(--light-color);
-        font-size: 18px;
+        font-size: 16px;
         transition: var(--transition);
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
       }
 
       .social-icons a:hover {
-        color: var(--secondary-color);
+        color: var(--dark-color);
+        background-color: var(--secondary-color);
+        transform: translateY(-2px);
       }
 
       .header-main {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 0;
+        padding: 12px 0;
         position: relative;
       }
 
       .logo {
-        max-width: 150px;
+        max-width: 100px;
       }
 
       .nav-menu {
         display: flex;
-        gap: 30px;
+        gap: 5px;
+      }
+
+      .nav-menu li {
+        position: relative;
       }
 
       .nav-menu a {
@@ -173,28 +191,19 @@
         font-weight: 500;
         transition: var(--transition);
         position: relative;
-        padding: 5px 0;
+        padding: 8px 15px;
+        border-radius: 4px;
+        display: block;
       }
 
-      .nav-menu a::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background: var(--secondary-color);
-        bottom: 0;
-        right: 0;
-        transition: var(--transition);
-      }
-
-      .nav-menu a:hover,
-      .nav-menu a.active {
+      .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.05);
         color: var(--secondary-color);
       }
 
-      .nav-menu a:hover::after,
-      .nav-menu a.active::after {
-        width: 100%;
+      .nav-menu a.active {
+        color: var(--dark-color);
+        background-color: var(--secondary-color);
       }
 
       .mobile-toggle {
@@ -202,13 +211,20 @@
         background: none;
         border: none;
         color: var(--light-color);
-        font-size: 24px;
+        font-size: 22px;
         cursor: pointer;
         transition: var(--transition);
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        display: none;
+        align-items: center;
+        justify-content: center;
       }
 
       .mobile-toggle:hover {
         color: var(--secondary-color);
+        background-color: rgba(255, 255, 255, 0.05);
       }
 
       /* Hero section */
@@ -684,9 +700,22 @@
           width: 100%;
           height: calc(100vh - 80px);
           background-color: var(--background-dark);
-          padding: 40px 20px;
+          padding: 20px;
           transition: var(--transition);
           z-index: 1000;
+          gap: 10px;
+        }
+
+        .nav-menu li {
+          width: 100%;
+        }
+
+        .nav-menu a {
+          padding: 12px 15px;
+          width: 100%;
+          text-align: center;
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .nav-menu.active {
@@ -694,7 +723,7 @@
         }
 
         .mobile-toggle {
-          display: block;
+          display: flex;
         }
 
         .hero-title {
@@ -749,16 +778,19 @@
             <a
               href="https://www.facebook.com/4GendyCompany/?ref=bookmark"
               target="_blank"
+              aria-label="Facebook"
               ><i class="fab fa-facebook-f"></i
             ></a>
             <a
               href="https://www.youtube.com/channel/UCD0AtYdCyzQfnxzcbGsuB5A/featured?view_as=subscriber"
               target="_blank"
+              aria-label="YouTube"
               ><i class="fab fa-youtube"></i
             ></a>
             <a
               href="https://www.instagram.com/elgendymall/?igshid=1k2i13f3annle"
               target="_blank"
+              aria-label="Instagram"
               ><i class="fab fa-instagram"></i
             ></a>
           </div>
@@ -779,7 +811,7 @@
               <li><a href="#">اتصل بنا</a></li>
             </ul>
           </nav>
-          <button class="mobile-toggle">
+          <button class="mobile-toggle" aria-label="Toggle Menu">
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -936,7 +968,7 @@
               src="https://static.wixstatic.com/media/d378cc_102376381d19441fbb4775a89443ca1d~mv2.png"
               alt="El Gendy Logo"
               class="footer-logo"
-              style="max-width: 180px; margin-bottom: 20px"
+              style="max-width: 70px; margin-bottom: 20px"
             />
             <div class="footer-social">
               <a
