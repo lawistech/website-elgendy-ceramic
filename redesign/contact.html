@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اتصل بنا - الجندى للسيراميك</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Page specific styles */
+      .page-banner {
+        height: 40vh;
+        background-image: url("https://static.wixstatic.com/media/d378cc_1ab7853881b2486bb4c6c6bc7093b264~mv2.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: var(--light-color);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px;
+      }
+
+      .page-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .page-banner-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .contact-info {
+        background-color: var(--background-light);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-info h3 {
+        color: var(--secondary-color);
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .contact-info h3::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: var(--secondary-color);
+        bottom: -10px;
+        right: 0;
+      }
+
+      .contact-details {
+        margin-top: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+      }
+
+      .contact-item i {
+        color: var(--secondary-color);
+        font-size: 24px;
+        margin-left: 15px;
+        margin-top: 5px;
+      }
+
+      .contact-text h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .contact-text p, .contact-text a {
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .contact-text a:hover {
+        color: var(--secondary-color);
+      }
+
+      .contact-form {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-form h3 {
+        color: var(--secondary-color);
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .contact-form h3::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: var(--secondary-color);
+        bottom: -10px;
+        right: 0;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: "Cairo", sans-serif;
+        font-size: 16px;
+        transition: var(--transition);
+      }
+
+      .form-control:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(225, 192, 115, 0.2);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .submit-btn:hover {
+        background-color: #d4b155;
+        transform: translateY(-3px);
+      }
+
+      .map-section {
+        margin-top: 50px;
+      }
+
+      .map-container {
+        height: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      @media (max-width: 768px) {
+        .page-title {
+          font-size: 2.2rem;
+        }
+        
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+        
+        .contact-info h3::after,
+        .contact-form h3::after {
+          right: 50%;
+          transform: translateX(50%);
+        }
+        
+        .contact-info,
+        .contact-form {
+          text-align: center;
+        }
+        
+        .contact-item {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .contact-item i {
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Include Header -->
+    <div id="header-container"></div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="page-banner-content">
+        <h1 class="page-title">اتصل بنا</h1>
+        <p>نحن هنا للإجابة على استفساراتك</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>معلومات الاتصال</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-text">
+                  <h4>العنوان</h4>
+                  <p>فرع الجندى الرئيسى: طريق بنها ميت غمر, قرية المعصرة، ميت غمر، الدقهلية, مصر</p>
+                  <p>الفرع التانى: ميت غمر امام موقف العاشر</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div class="contact-text">
+                  <h4>الهاتف</h4>
+                  <p><a href="tel:+201093200002">+2 010-932-00002</a></p>
+                  <p><a href="tel:+201062649588">+2 010-626-49588</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div class="contact-text">
+                  <h4>البريد الإلكتروني</h4>
+                  <p><a href="mailto:info@elgendy-ceramic.com">info@elgendy-ceramic.com</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <div class="contact-text">
+                  <h4>ساعات العمل</h4>
+                  <p>السبت - الخميس: 9:00 صباحاً - 9:00 مساءً</p>
+                  <p>الجمعة: 2:00 ظهراً - 9:00 مساءً</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form">
+            <h3>أرسل رسالة</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="الاسم" required>
+              </div>
+              
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="البريد الإلكتروني" required>
+              </div>
+              
+              <div class="form-group">
+                <input type="tel" class="form-control" placeholder="رقم الهاتف">
+              </div>
+              
+              <div class="form-group">
+                <textarea class="form-control" placeholder="رسالتك" required></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">إرسال الرسالة</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <h2 class="section-title">موقعنا</h2>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3427.5758356326166!2d31.25790731513933!3d30.79063198161316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7c9a4d5c28b11%3A0x3f1d44c465b6b0e!2z2YXYpNiz2LPYqSDYp9mE2KzZhtiv2Ykg2YTZhNiz2YrYsdin2YXZitmDINmI2KfZhNio2YjYsdiz2YTZitmG!5e0!3m2!1sar!2seg!4v1623456789012!5m2!1sar!2seg" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Script to include header and footer -->
+    <script>
+      // Function to load HTML content
+      function includeHTML(containerId, filePath) {
+        fetch(filePath)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(containerId).innerHTML = data;
+          })
+          .catch(error => console.error('Error loading the HTML file:', error));
+      }
+
+      // Load header and footer
+      document.addEventListener('DOMContentLoaded', function() {
+        includeHTML('header-container', 'includes/header.html');
+        includeHTML('footer-container', 'includes/footer.html');
+      });
+
+      // Form submission
+      document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+          contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to a server
+            // For this demo, we'll just show an alert
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+            contactForm.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

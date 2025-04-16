@@ -1,0 +1,140 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img
+          src="https://static.wixstatic.com/media/d378cc_102376381d19441fbb4775a89443ca1d~mv2.png"
+          alt="El Gendy Logo"
+          class="footer-logo"
+          style="max-width: 70px; margin-bottom: 20px"
+        />
+        <div class="footer-social">
+          <a
+            href="https://www.facebook.com/4GendyCompany/?ref=bookmark"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UCD0AtYdCyzQfnxzcbGsuB5A/featured?view_as=subscriber"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/elgendymall/?igshid=1k2i13f3annle"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.yellowpages.com.eg/ar/search/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D8%AF%D9%89-%D9%84%D9%84%D8%A8%D9%88%D8%B1%D8%B3%D9%84%D9%8A%D9%86-%D9%88%D8%A7%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A7%D9%85%D9%8A%D9%83"
+            target="_blank"
+            ><i class="fas fa-book"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>روابط سريعة</h3>
+        <div class="footer-menu">
+          <a href="#">الرئيسية</a>
+          <a href="#">سيراميك وبورسلين</a>
+          <a href="#">ادوات صحية</a>
+          <a href="#">ميديا</a>
+          <a href="#">اتصل بنا</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>اتصل بنا</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+2 010-932-00002">+2 010-932-00002</a>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+2 010-626-49588">+2 010-626-49588</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>العنوان</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span
+              >فرع الجندى الرئيسى: طريق بنها ميت غمر, قرية المعصرة، ميت غمر،
+              الدقهلية, مصر</span
+            >
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>الفرع التانى: ميت غمر امام موقف العاشر</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>©2023 El Gendy Establishment For Porcelain &amp; Ceramic</p>
+      <p>Built and Managed by</p>
+      <a
+        href="http://yellowmedia.com.eg/en/"
+        target="_blank"
+        class="yellow-media"
+      >
+        <img
+          src="https://static.wixstatic.com/media/2e5937_88c6eb428ce14698af34dbde086bd4e4~mv2.png"
+          alt="Yellow Media"
+          width="133"
+        />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- JS Scripts -->
+<script>
+  // Mobile menu toggle
+  const mobileToggle = document.querySelector(".mobile-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  mobileToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    mobileToggle.querySelector("i").classList.toggle("fa-bars");
+    mobileToggle.querySelector("i").classList.toggle("fa-times");
+  });
+
+  // Sticky header
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header");
+    if (window.scrollY > 100) {
+      header.style.backgroundColor = "rgba(34, 34, 34, 0.95)";
+      header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+    } else {
+      header.style.backgroundColor = "var(--background-dark)";
+      header.style.boxShadow = "none";
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      // Close mobile menu if open
+      if (navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
+        mobileToggle.querySelector("i").classList.add("fa-bars");
+        mobileToggle.querySelector("i").classList.remove("fa-times");
+      }
+    });
+  });
+</script>
