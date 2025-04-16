@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الجندى للسيراميك</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Tajawal", sans-serif;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* Navigation */
+      .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        padding: 8px 16px;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #e1c073;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .language-toggle {
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 10px;
+      }
+
+      .social-links a {
+        color: white;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: #e1c073;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background-image: url("https://static.wixstatic.com/media/d378cc_1ab7853881b2486bb4c6c6bc7093b264~mv2.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 28px;
+        color: #e1c073;
+        font-weight: 500;
+        margin-bottom: 40px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .scroll-btn {
+        background-color: #e1c073;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: background-color 0.3s;
+      }
+
+      .scroll-btn:hover {
+        background-color: #c9a75a;
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 60px 20px;
+      }
+
+      .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 36px;
+        color: #e1c073;
+        font-weight: bold;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::before {
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: 10px;
+        height: 36px;
+        width: 6px;
+        background-color: #e1c073;
+      }
+
+      .about-section {
+        background-color: white;
+      }
+
+      .about-container {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-content {
+        flex: 1;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .info-list li {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .info-list li:before {
+        content: "•";
+        color: #000;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .info-list p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .info-section {
+        background-color: #f5f5f5;
+        text-align: center;
+      }
+
+      .info-section .section-title {
+        margin-bottom: 10px;
+      }
+
+      .info-underline {
+        width: 100px;
+        height: 4px;
+        background-color: #e1c073;
+        margin: 0 auto 30px;
+      }
+
+      .info-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .goals-section {
+        background-color: white;
+      }
+
+      .goals-container {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .goals-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .goals-image-container {
+        display: inline-block;
+        position: relative;
+      }
+
+      .goals-image-bg {
+        width: 400px;
+        height: 400px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+      }
+
+      .goals-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+      }
+
+      .goals-content {
+        flex: 1;
+      }
+
+      .mission-section {
+        background-color: #f5f5f5;
+      }
+
+      .mission-container {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .mission-content {
+        flex: 1;
+      }
+
+      .mission-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .mission-image-container {
+        display: inline-block;
+        position: relative;
+      }
+
+      .mission-image-bg {
+        width: 400px;
+        height: 400px;
+        background-color: white;
+        border-radius: 8px;
+      }
+
+      .mission-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #212121;
+        color: white;
+        padding: 60px 20px 30px;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 250px;
+        text-align: center;
+      }
+
+      .footer-title {
+        font-size: 20px;
+        color: #e1c073;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .footer-underline {
+        width: 50px;
+        height: 2px;
+        background-color: #e1c073;
+        margin: 0 auto 20px;
+      }
+
+      .footer-content {
+        line-height: 1.6;
+      }
+
+      .footer-logo img {
+        height: 100px;
+        margin-bottom: 20px;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        color: white;
+        font-size: 24px;
+        transition: color 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: #e1c073;
+      }
+
+      .footer-contact a {
+        display: block;
+        margin-bottom: 10px;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      .footer-contact a:hover {
+        color: #e1c073;
+      }
+
+      .footer-address p {
+        margin-bottom: 10px;
+      }
+
+      .footer-bottom {
+        margin-top: 40px;
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .copyright {
+        color: #aaa;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .created-by {
+        color: #aaa;
+        font-size: 14px;
+      }
+
+      .created-by span {
+        color: #e1c073;
+        font-weight: bold;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: #212121;
+        z-index: 1001;
+        padding: 20px;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .close-menu {
+        color: white;
+        font-size: 24px;
+        text-align: left;
+        margin-bottom: 30px;
+        cursor: pointer;
+      }
+
+      .mobile-menu ul {
+        margin-bottom: 30px;
+      }
+
+      .mobile-menu li {
+        margin-bottom: 15px;
+      }
+
+      .mobile-menu a {
+        color: white;
+        font-size: 18px;
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: color 0.3s;
+      }
+
+      .mobile-menu a:hover {
+        color: #e1c073;
+      }
+
+      .mobile-menu .language-toggle {
+        margin-top: 20px;
+        display: inline-block;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+
+      /* Media Queries */
+      @media (max-width: 992px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .about-container,
+        .goals-container,
+        .mission-container {
+          flex-direction: column;
+        }
+
+        .about-image,
+        .about-content,
+        .goals-image,
+        .goals-content,
+        .mission-image,
+        .mission-content {
+          width: 100%;
+        }
+
+        .goals-image-bg,
+        .mission-image-bg {
+          width: 300px;
+          height: 300px;
+        }
+
+        .goals-image img,
+        .mission-image img {
+          width: 200px;
+          height: 200px;
+          top: 50px;
+          left: 50px;
+        }
+
+        .footer-column {
+          flex: 100%;
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 22px;
+        }
+
+        .section-title {
+          font-size: 28px;
+        }
+
+        .section {
+          padding: 40px 20px;
+        }
+
+        .goals-image-bg,
+        .mission-image-bg {
+          width: 250px;
+          height: 250px;
+        }
+
+        .goals-image img,
+        .mission-image img {
+          width: 180px;
+          height: 180px;
+          top: 35px;
+          left: 35px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .nav-container {
+          padding: 10px;
+        }
+
+        .logo img {
+          height: 40px;
+        }
+
+        .social-links {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .section-title {
+          font-size: 24px;
+        }
+
+        .info-list p {
+          font-size: 16px;
+        }
+
+        .goals-image-bg,
+        .mission-image-bg {
+          width: 220px;
+          height: 220px;
+        }
+
+        .goals-image img,
+        .mission-image img {
+          width: 160px;
+          height: 160px;
+          top: 30px;
+          left: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#">
+            <img
+              src="https://static.wixstatic.com/media/d378cc_102376381d19441fbb4775a89443ca1d~mv2.png"
+              alt="الجندى للسيراميك"
+            />
+          </a>
+        </div>
+
+        <div class="nav-links">
+          <a href="#" class="active">الرئيسية</a>
+          <a href="#">سيراميك وبورسلين</a>
+          <a href="#">ادوات صحية</a>
+          <a href="#">ميديا</a>
+          <a href="#">اتصل بنا</a>
+        </div>
+
+        <div class="nav-right">
+          <div class="language-toggle">
+            AR <i class="fas fa-chevron-down"></i>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.facebook.com/4GendyCompany/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/channel/UCD0AtYdCyzQfnxzcbGsuB5A"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://www.instagram.com/elgendymall/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+
+          <div class="hamburger" id="menu-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="close-menu" id="close-menu">
+        <i class="fas fa-times"></i>
+      </div>
+      <ul>
+        <li><a href="#" class="active">الرئيسية</a></li>
+        <li><a href="#">سيراميك وبورسلين</a></li>
+        <li><a href="#">ادوات صحية</a></li>
+        <li><a href="#">ميديا</a></li>
+        <li><a href="#">اتصل بنا</a></li>
+      </ul>
+      <div class="language-toggle">AR <i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>الجندى دايما معاك</h1>
+        <p>الأقرب لك ... الأوفر لك</p>
+        <button class="scroll-btn" id="scroll-btn">
+          SCROLL <i class="fas fa-arrow-down"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="section-container about-container">
+        <div class="about-content">
+          <h2 class="section-title">من نحن</h2>
+          <ul class="info-list">
+            <li>
+              <p>
+                مؤسسة الجندي واحده من المؤسسات التجارية الرائده في مجال
+                السيراميك والبورسلين والادوات الصحية بمصر, تم انشاؤها عام 2008
+                م.
+              </p>
+            </li>
+            <li>
+              <p>
+                تعـد مؤسسة الجنــدي من أكبر المؤسسات للسيراميك والبورسلين
+                والادوات الصحية في جمهورية مصر العربية.وتضم فروعنا مجموعة متنوعة
+                من السيراميك والبورسلين ومنها ماركات مستوردة وكذلك معروفة
+                ومشهورة محلياً.
+              </p>
+            </li>
+            <li>
+              <p>
+                مؤسسـة الجنــدي الـوكيـل لأشهر وأرقـى الماركـات التجـاريـة
+                بالاضـافـة إلـى المجموعة المتميـزة لأفضـل ماركـات السيراميك
+                والبورسلين المشهورة في مصر.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://static.wixstatic.com/media/d378cc_fc0ba5d0e6c745afba78eb9a83d81b5d~mv2.jpg"
+            alt="منتجات الجندي"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Information Section -->
+    <section class="section info-section">
+      <div class="section-container">
+        <h2 class="section-title">معلومات عنا</h2>
+        <div class="info-underline"></div>
+        <div class="info-content">
+          <ul class="info-list">
+            <li>
+              <p>
+                مؤسسـة الجنــدي متميــزة عن غيـرها في السوق من خلال الحصول على
+                ذوق رائع في اختيار المنتجات ولنا علامات تجارية حصرية من
+                السيراميك والبورسلين.
+              </p>
+            </li>
+            <li>
+              <p>
+                تم تأسيس مؤسسة الجندي من قبل محاسب /محمد عبد الفتاح الجندي كشركة
+                مصرية راسخة لتجارة واستيراد السيراميك والبورسلين والأدوات
+                الصحية.
+              </p>
+            </li>
+            <li>
+              <p>
+                بعد مرور12 عامًا على تلبية احتياجات العملاء وتقديم خدمات
+                استثنائية ، أصبحت مؤسسة الجندي الآن لها فرعين في مواقع
+                استراتيجية بمدينة ميت غمر وأصبحت شركة رائدة في عالم السيراميك
+                والبورسلين في مصر.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section class="section goals-section">
+      <div class="section-container goals-container">
+        <div class="goals-image">
+          <div class="goals-image-container">
+            <div class="goals-image-bg"></div>
+            <img
+              src="https://static.wixstatic.com/media/d378cc_b356142b935e4e2cad62fae387d8d62f~mv2.png"
+              alt="أهداف الجندي"
+            />
+          </div>
+        </div>
+        <div class="goals-content">
+          <h2 class="section-title">أهــــدافــنـــــا</h2>
+          <ul class="info-list">
+            <li>
+              <p>
+                توسيع أعمالنا في القاهرة الكبرى والمـدن الجديدة ونسعـى لتجـاوز
+                توقعات العملاء في جميع الأوقات من خــلال تقديم مجموعة واسعة من
+                المنتجات وخدمة استثنائية لإكمال تجربة سعيدة مع مؤسسة الجندي.
+              </p>
+            </li>
+            <li>
+              <p>
+                تقديم علامات تجارية محلية وعالمية جديدة في السوق وتقديم خدمات
+                متقدمة لراحة العملاء واحتياجاتهم لتزويد عملائنا بتجربة تسوق
+                راقية للسيراميك والبورسلين والادوات الصحية.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section mission-section">
+      <div class="section-container mission-container">
+        <div class="mission-content">
+          <h2 class="section-title">مهمتنا</h2>
+          <ul class="info-list">
+            <li>
+              <p>
+                نــحــن دائما نبـذل قصاري جهدنا لتوفير خطوط منتجات فريدة من
+                نوعها لعملائنا الكرام أن نقدم لعملائنا أرقى و أحدث التصميمات و
+                الصيحات العالميـة فـي عـالــم السيراميك و البورسلين ، ليكـون
+                عميـل راضيـاً بما يشاهـــده تحــت سقـف معارضنا، و يختار ما
+                يناسبه و كأنه يـراه في منزلـه المتابعـة في بناء نظام مؤسساتي
+                يضمن جــودة عاليـة في التسليــم و خدمة ما بعد البيع، و يعزز
+                الاستمرار في النمو و التوسع وننفرد بتقديم اعلي الخدمات و الحصول
+                علي رضا عملاؤنا.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="mission-image">
+          <div class="mission-image-container">
+            <div class="mission-image-bg"></div>
+            <img
+              src="https://static.wixstatic.com/media/d378cc_704abb2cb5064117a442d2921bbcce46~mv2.jpg"
+              alt="مهمة الجندي"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3 class="footer-title">اتصل بنا</h3>
+          <div class="footer-underline"></div>
+          <div class="footer-content footer-contact">
+            <a href="tel:+20109320002">+20 109-320-0002</a>
+            <a href="tel:+201062649588">+20 106-264-9588</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img
+              src="https://static.wixstatic.com/media/d378cc_102376381d19441fbb4775a89443ca1d~mv2.png"
+              alt="الجندى للسيراميك"
+            />
+          </div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/4GendyCompany/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/channel/UCD0AtYdCyzQfnxzcbGsuB5A"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://www.instagram.com/elgendymall/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-title">العنوان</h3>
+          <div class="footer-underline"></div>
+          <div class="footer-content footer-address">
+            <p>
+              فرع الجندى الرئيسى: طريق بنها ميت غمر, قرية المعصرة، ميت غمر،
+              الدقهلية , مصر
+            </p>
+            <p>الفرع التانى: ميت غمر امام موقف العاشر</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          ©2025 El Gendy Establishment For Porcelain & Ceramic
+        </p>
+        <p class="created-by">Built and Managed by <span>Yellow Media</span></p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const overlay = document.getElementById("overlay");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+
+      overlay.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+
+      // Smooth Scrolling
+      document.getElementById("scroll-btn").addEventListener("click", () => {
+        document.getElementById("about").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+
+      // Sticky Header
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector(".header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+
+      // Language Toggle Placeholder
+      const langToggle = document.querySelectorAll(".language-toggle");
+      langToggle.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          // In a real implementation, this would toggle between Arabic and English
+          const currentLang = toggle.textContent.trim().substring(0, 2);
+          if (currentLang === "AR") {
+            toggle.innerHTML = 'EN <i class="fas fa-chevron-down"></i>';
+            document.documentElement.setAttribute("lang", "en");
+            document.documentElement.setAttribute("dir", "ltr");
+          } else {
+            toggle.innerHTML = 'AR <i class="fas fa-chevron-down"></i>';
+            document.documentElement.setAttribute("lang", "ar");
+            document.documentElement.setAttribute("dir", "rtl");
+          }
+          alert(
+            "In a complete implementation, this would change the language of the entire site."
+          );
+        });
+      });
+
+      // Animation on scroll
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll(".section");
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+
+          if (elementPosition < screenPosition) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      // Set initial styles for animation
+      document.querySelectorAll(".section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      });
+
+      window.addEventListener("scroll", animateOnScroll);
+      window.addEventListener("load", animateOnScroll);
+
+      // Product gallery simulation
+      const createGallery = () => {
+        // This would typically load images from a database or API
+        const products = [
+          {
+            name: "سيراميك أرضيات كلاسيك",
+            image:
+              "https://static.wixstatic.com/media/d378cc_fc0ba5d0e6c745afba78eb9a83d81b5d~mv2.jpg",
+          },
+          {
+            name: "بورسلين حوائط مودرن",
+            image:
+              "https://static.wixstatic.com/media/d378cc_704abb2cb5064117a442d2921bbcce46~mv2.jpg",
+          },
+          {
+            name: "سيراميك حمامات",
+            image:
+              "https://static.wixstatic.com/media/d378cc_f5273e87b79341538ae01bdf586e2f72~mv2.jpg",
+          },
+          {
+            name: "بورسلين أرضيات",
+            image:
+              "https://static.wixstatic.com/media/d378cc_744abb922ff6485a936da02d0b766ea1~mv2.jpg",
+          },
+        ];
+
+        // Add a product showcase section - commented out in this demo version
+        /*
+            const gallerySection = document.createElement('section');
+            gallerySection.className = 'section products-section';
+            gallerySection.innerHTML = `
+                <div class="section-container">
+                    <h2 class="section-title">منتجاتنا</h2>
+                    <div class="info-underline"></div>
+                    <div class="products-grid"></div>
+                </div>
+            `;
+            
+            document.querySelector('.mission-section').after(gallerySection);
+            
+            const productsGrid = document.querySelector('.products-grid');
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <h3 class="product-name">${product.name}</h3>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+            */
+      };
+
+      // Uncomment to enable product gallery
+      // createGallery();
+
+      // Form validation for contact page
+      const validateForm = (form) => {
+        const name = form.querySelector('input[name="name"]');
+        const email = form.querySelector('input[name="email"]');
+        const message = form.querySelector('textarea[name="message"]');
+
+        let isValid = true;
+
+        if (!name.value.trim()) {
+          highlightError(name);
+          isValid = false;
+        }
+
+        if (!email.value.trim() || !isValidEmail(email.value)) {
+          highlightError(email);
+          isValid = false;
+        }
+
+        if (!message.value.trim()) {
+          highlightError(message);
+          isValid = false;
+        }
+
+        return isValid;
+      };
+
+      const highlightError = (input) => {
+        input.style.borderColor = "red";
+        input.addEventListener(
+          "input",
+          function () {
+            this.style.borderColor = "#ccc";
+          },
+          { once: true }
+        );
+      };
+
+      const isValidEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      };
+
+      // Image preloading for better performance
+      const preloadImages = () => {
+        const images = [
+          "https://static.wixstatic.com/media/d378cc_1ab7853881b2486bb4c6c6bc7093b264~mv2.jpg",
+          "https://static.wixstatic.com/media/d378cc_102376381d19441fbb4775a89443ca1d~mv2.png",
+          "https://static.wixstatic.com/media/d378cc_fc0ba5d0e6c745afba78eb9a83d81b5d~mv2.jpg",
+          "https://static.wixstatic.com/media/d378cc_b356142b935e4e2cad62fae387d8d62f~mv2.png",
+          "https://static.wixstatic.com/media/d378cc_704abb2cb5064117a442d2921bbcce46~mv2.jpg",
+        ];
+
+        images.forEach((src) => {
+          const img = new Image();
+          img.src = src;
+        });
+      };
+
+      preloadImages();
+    </script>
+  </body>
+</html>
